@@ -1,9 +1,12 @@
 #include "Employee.hpp"
+#include <cstring>
 
 using namespace std;
 
 Employee::Employee() {
-
+	Name = NULL;
+	Position = NULL;
+	Age = 0;
 }
 
 Employee::Employee(char* m_name,char* m_pos,unsigned int m_age) {
@@ -13,7 +16,6 @@ Employee::Employee(char* m_name,char* m_pos,unsigned int m_age) {
 }
 
 Employee::~Employee() {
-
 }
 
 std::ostream & operator << (std::ostream & s, const Employee & E)
