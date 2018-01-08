@@ -13,9 +13,20 @@ template <class Tkey,class Tvalue> class Map {
 			node() {}
 		};
 		node* head;
+		void Clear() {
+			node* current = head, *nextElem;
+			while(current) {
+				nextElem = current->next;
+				delete current;
+				current = nextElem;
+			}
+		}
 	public:
 		Map() {
 			head = NULL;
+		}
+		~Map() {
+			Clear();
 		}
 		void Add(Tkey key,Tvalue val) {
 			node* newNode = new node();
