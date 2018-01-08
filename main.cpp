@@ -1,6 +1,6 @@
 #include <iostream>
-#include "Employee.h" //Defines class Employee
-#include "Map.h" //Defines template Map<Key,Value>
+#include "Employee.hpp" //Defines class Employee
+#include "Map.hpp" //Defines template Map<Key,Value>
 
 using namespace std;
 
