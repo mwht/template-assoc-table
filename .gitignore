@@ -1,0 +1,12 @@
+# object and profiler files
+
+*.o
+*.gch
+
+# Linux binary
+
+template-assoc-table
+
+# gedit at CTI
+
+*~
