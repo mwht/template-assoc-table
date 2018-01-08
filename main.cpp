@@ -6,7 +6,7 @@ using namespace std;
 
 int main(void)
 {
-/*	typedef unsigned int ID; //Identification number of Employee
+	typedef unsigned int ID; //Identification number of Employee
 	Map<ID,Employee> database; //Database of employees
 
 	database.Add(761028073,Employee("Jan Kowalski","salesman",28)); //Add first
@@ -23,4 +23,5 @@ int main(void)
 	database = newDatabase; //Update original database
 
 	cout << database << endl; //Print original database*/
-};
+	return 0;
+}

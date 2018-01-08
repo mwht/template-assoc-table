@@ -1,5 +1,8 @@
-#ifndef __Map_h_
-#define __Map_h_
+#ifndef __Map_hpp_
+#define __Map_hpp_
+#include <iostream>
+
+using namespace std;
 
 template <class Tkey,class Tvalue> class Map {
 	private:
@@ -7,11 +10,7 @@ template <class Tkey,class Tvalue> class Map {
 			node* next;
 			Tkey key;
 			Tvalue val;
-			node() {
-				next = NULL;
-				key = NULL;
-				val = NULL;
-			}
+			node() {}
 		};
 		node* head;
 	public:
@@ -24,16 +23,25 @@ template <class Tkey,class Tvalue> class Map {
 			newNode->key = key;
 			newNode->val = val;
 			head = newNode;
+			//cout << head->val;
 		}
 		Tvalue* Find(Tkey key) {
 			node* current = head;
 			while(current) {
-				if(current->key == key) return &current;
+				if(current->key == key) return &current->val;
 				current = current->next;
 			}
 			return NULL;
 		}
+		friend std::ostream& operator<< (std::ostream& out, const Map& m) {
+			node* current = m.head;
+			while(current) {
+				out << current->val;
+				current = current->next;
+			}
+			return out;
+		}
 		
 };
 
-#endif // __Map_h_
+#endif // __Map_hpp_

@@ -3,11 +3,10 @@
 #include <iostream>
 
 class Employee {
-	private:
-		char* name;
-		char* position;
-		unsigned int age;
 	public:
+		char* Name;
+		char* Position;
+		unsigned int Age;
 		Employee();
 		Employee(char*,char*,unsigned int);
 		~Employee();

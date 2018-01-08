@@ -2,14 +2,22 @@
 
 using namespace std;
 
-Employee::Employee(char* m_name,char* m_pos,unsigned int m_age) {
-	name = m_name;
-	position = m_pos;
-	age = m_age;
+Employee::Employee() {
+
 }
 
-std::ostream & operator << (std::ostream & s, const Employee & M)
+Employee::Employee(char* m_name,char* m_pos,unsigned int m_age) {
+	Name = m_name;
+	Position = m_pos;
+	Age = m_age;
+}
+
+Employee::~Employee() {
+
+}
+
+std::ostream & operator << (std::ostream & s, const Employee & E)
 {
-  cout << "employee: name: " << name << ", position: " << position << ", age: " << age << "\n";
+  cout << "employee: name: " << E.Name << ", position: " << E.Position << ", age: " << E.Age << "\n";
   return s;
 }
