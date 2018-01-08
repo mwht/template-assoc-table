@@ -1,3 +1,6 @@
+#ifndef __Map_h_
+#define __Map_h_
+
 template <class Tkey,class Tvalue> class Map {
 	private:
 		struct node {
@@ -32,3 +35,5 @@ template <class Tkey,class Tvalue> class Map {
 		}
 		
 };
+
+#endif // __Map_h_
