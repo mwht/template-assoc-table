@@ -27,11 +27,18 @@ template <class Tkey,class Tvalue> class Map {
 			}
 		}
 		void Copy(const Map& m) {
-			node* src = m.head;
-			head = NULL;
-			while(src) {
-				Add(src->key,src->val);
+			node *src, *dst;
+			src = m.head;
+			dst = new node (*src);
+			head = dst;
+			while (src) {
 				src = src->next;
+				if(src == NULL) {
+					dst->next = NULL;
+					break;
+				}
+				dst->next = new node (*src);
+				dst = dst->next;
 			}
 		}
 	public:
