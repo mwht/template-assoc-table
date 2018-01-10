@@ -20,6 +20,6 @@ Employee::~Employee() {
 
 std::ostream & operator << (std::ostream & s, const Employee & E)
 {
-  cout << "employee: name: " << E.Name << ", position: " << E.Position << ", age: " << E.Age << "\n";
+  s << "employee: name: " << E.Name << ", position: " << E.Position << ", age: " << E.Age << "\n";
   return s;
 }

@@ -10,10 +10,11 @@ template <class Tkey,class Tvalue> class Map {
 			node* next;
 			Tkey key;
 			Tvalue val;
-			node() {}
+			node() { next = NULL; }
 			node(const node& n) {
 				key = n.key;
 				val = n.val;
+				next = NULL;
 			}
 		};
 		node* head;
@@ -25,6 +26,14 @@ template <class Tkey,class Tvalue> class Map {
 				current = nextElem;
 			}
 		}
+		void Copy(const Map& m) {
+			node* src = m.head;
+			head = NULL;
+			while(src) {
+				Add(src->key,src->val);
+				src = src->next;
+			}
+		}
 	public:
 		Map() {
 			head = NULL;
@@ -33,18 +42,7 @@ template <class Tkey,class Tvalue> class Map {
 			Clear();
 		}
 		Map(const Map& m) {
-			node* src = m.head;
-			node* dst = new node(*src);
-			head = dst;
-			while(src) {
-				src = src->next;
-				if(src == NULL) {
-					dst->next = NULL;
-					break;
-				}
-				dst->next = new node(*src);
-				dst = dst->next;
-			}
+			Copy(m);
 		}
 		void Add(Tkey key,Tvalue val) {
 			node* newNode = new node();
@@ -70,7 +68,11 @@ template <class Tkey,class Tvalue> class Map {
 			}
 			return out;
 		}
-
+		Map& operator=(const Map<class a,class b> & m) {
+			Map<a,b> newMap;
+			newMap.Copy(m);
+			return newMap;
+		}
 };
 
 #endif // __Map_hpp_
