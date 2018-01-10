@@ -23,3 +23,10 @@ std::ostream & operator << (std::ostream & s, const Employee & E)
   s << "employee: name: " << E.Name << ", position: " << E.Position << ", age: " << E.Age << "\n";
   return s;
 }
+
+Employee& Employee::operator=(const Employee& e) {
+	Name = e.Name;
+	Position = e.Position;
+	Age = e.Age;
+	return *this;
+}
