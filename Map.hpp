@@ -16,6 +16,7 @@ template <class Tkey,class Tvalue> class Map {
 				val = n.val;
 				next = NULL;
 			}
+			~node() {}
 		};
 		node* head;
 		void Clear() {
@@ -25,6 +26,7 @@ template <class Tkey,class Tvalue> class Map {
 				delete current;
 				current = nextElem;
 			}
+			head = NULL;
 		}
 		void Copy(const Map& m) {
 			node *src, *dst;
