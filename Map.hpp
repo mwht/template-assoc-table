@@ -76,9 +76,8 @@ template <class Tkey,class Tvalue> class Map {
 			return out;
 		}
 		Map& operator=(const Map<class a,class b> & m) {
-			Map<a,b> newMap;
-			newMap.Copy(m);
-			return newMap;
+			Copy(m);
+			return *this;
 		}
 };
 

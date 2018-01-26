@@ -1,5 +1,5 @@
-#ifndef __Employee_h_
-#define __Employee_h_
+#ifndef __Employee_hpp_
+#define __Employee_hpp_
 #include <iostream>
 
 class Employee {
@@ -14,4 +14,4 @@ class Employee {
 		Employee& operator=(const Employee&);
 };
 
-#endif // __Employee_h_
+#endif // __Employee_hpp_
